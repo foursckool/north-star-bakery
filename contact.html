@@ -1,84 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>North Star Bakery - Contact & Pre-Orders</title>
-    <script src="script.js" defer></script>
-</head> <link rel="stylesheet" href="style.css">
-<body>
-    <header>
-        <img src="bakery-logo_c.png" alt="North Star Bakery Logo - a bread loaf with a wheat stalk" width="150">
-        <h1>North Star Bakery</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact & Pre-Orders</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <h2>Contact Us & Pre-Orders</h2>
+<form id="contact-form" action="#" method="post">
+    <!-- FIRST FIELDSET: We updated this one with spans and removed 'required' -->
+    <fieldset>
+        <legend>Your Information</legend>
         
-        <h3>Location & Hours</h3>
-        <p><strong>Address:</strong> 123 Main Street, Your City</p>
-        <p><strong>Hours:</strong> Mon-Fri: 7 AM - 6 PM | Sat-Sun: 8 AM - 4 PM</p>
+        <p>
+            <label for="name">Full Name (required):</label>
+            <input type="text" id="name" name="name">
+            <span id="name-error" style="color: red; display: none; font-size: 0.9em;"></span>
+        </p>
+        
+        <p>
+            <label for="email">Email Address (required):</label>
+            <input type="email" id="email" name="email">
+            <span id="email-error" style="color: red; display: none; font-size: 0.9em;"></span>
+        </p>
 
-        <h3>Inquiry and Pre-Order Request Form</h3>
-        <p>Please fill out the form below to ask a question or place a pre-order. We will contact you to confirm your order and pickup time.</p>
+        <p>
+            <label for="pickup-date">Requested Pickup Date:</label>
+            <input type="date" id="pickup-date" name="pickup-date">
+        </p>
+    </fieldset>
 
-        <form action="#" method="post">
-            <fieldset>
-                <legend>Your Information</legend>
-                
-                <p>
-                    <label for="name">Full Name (required):</label>
-                    <input type="text" id="name" name="name" required>
-                </p>
-                
-                <p>
-                    <label for="email">Email Address (required):</label>
-                    <input type="email" id="email" name="email" required>
-                </p>
+    <!-- SECOND FIELDSET: Keep this exactly the same! -->
+    <fieldset>
+        <legend>Order Details</legend>
 
-                <p>
-                    <label for="pickup-date">Requested Pickup Date:</label>
-                    <input type="date" id="pickup-date" name="pickup-date">
-                </p>
-            </fieldset>
+        <p>
+            <label for="request-type">Request Type:</label>
+            <select id="request-type" name="request-type" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="pre-order">Pre-order</option>
+                <option value="general">General Question</option>
+            </select>
+        </p>
 
-            <fieldset>
-                <legend>Order Details</legend>
+        <p>
+            <label for="item-details">Item Details (What would you like to order?):</label><br>
+            <textarea id="item-details" name="item-details" rows="4" required></textarea>
+        </p>
 
-                <p>
-                    <label for="request-type">Request Type:</label>
-                    <select id="request-type" name="request-type" required>
-                        <option value="" disabled selected>Select an option</option>
-                        <option value="pre-order">Pre-order</option>
-                        <option value="general">General Question</option>
-                    </select>
-                </p>
+        <p>
+            <label for="allergies">Allergy Notes (if applicable):</label><br>
+            <textarea id="allergies" name="allergies" rows="2"></textarea>
+        </p>
+    </fieldset>
 
-                <p>
-                    <label for="item-details">Item Details (What would you like to order?):</label><br>
-                    <textarea id="item-details" name="item-details" rows="4" required></textarea>
-                </p>
-
-                <p>
-                    <label for="allergies">Allergy Notes (if applicable):</label><br>
-                    <textarea id="allergies" name="allergies" rows="2"></textarea>
-                </p>
-            </fieldset>
-
-            <button type="submit">Submit Request</button>
-        </form>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 North Star Bakery. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+    <button type="submit">Submit Request</button>
+</form>
